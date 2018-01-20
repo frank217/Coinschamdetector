@@ -20,6 +20,9 @@ class Contributor(object):
     def __init__(self):
         pass
 
+    def get_name(self):
+        pass
+
     def get_num_commits(self):
         pass
 

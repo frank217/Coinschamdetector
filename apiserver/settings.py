@@ -145,3 +145,8 @@ LOGGING = {
         },
     },
 }
+
+# Github API object
+from github import Github
+GITHUB_ACCESS_TOKEN = os.getenv("GITHUB_ACCESS_TOKEN")
+g = Github(GITHUB_ACCESS_TOKEN)

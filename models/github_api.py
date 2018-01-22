@@ -1,7 +1,5 @@
-from github import Github
+from apiserver.settings import g
 from models.data_representations import *
-
-g = Github("2c925c0645f2efd220b66db500f1001c1a24c30f")
 
 
 def get_contributors(req):

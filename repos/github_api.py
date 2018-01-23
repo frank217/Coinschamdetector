@@ -1,5 +1,5 @@
 from apiserver.settings import g
-from models.data_representations import *
+from repos.data_representations import *
 
 
 def get_contributors(req):

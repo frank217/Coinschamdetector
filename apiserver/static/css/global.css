@@ -1,0 +1,55 @@
+/* © Devon Rueckner 2016 */
+
+html {
+  margin-left: 20px;
+  margin-right: 10px;
+  overflow-y: scroll;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+  font-family: monospace;
+}
+
+input[type=text] {
+  background-color: #FFFFFF;
+  border: 1px solid #6F6F6F;
+  padding-left: 5px;
+  border-radius: 2px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  color: white;
+}
+
+.buttons {
+  display: flex;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.buttons .clickable {
+  padding: 10px;
+  margin: 5px;
+}
+
+a {
+  color: #B3B3B3;
+}
+
+a:hover {
+  color: white;
+}
+

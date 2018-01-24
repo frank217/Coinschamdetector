@@ -11,10 +11,8 @@ def get_contributors(req):
     l = []
     for c in contributors:
         l.append(
-            PyGithubContributor(c.name(), repo)
+            GithubContributor(c.name(), repo)
         )
 
     # return PyGithubGetContributorResponse(req)
-    return PyGithubGetContributorResponse(l)
-
-
+    return GithubGetContributorResponse(l)

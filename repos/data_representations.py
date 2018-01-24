@@ -1,59 +1,21 @@
-class GetContributorRequest(object):
-    def __init__(self):
-        pass
-
-    def get_repo_id(self):
-        pass
-
-
-class GetContributorResponse(object):
-    def __init__(self):
-        pass
-
-    def get_contributors(self):
-        pass
-
-
-class Contributor(object):
-    def __init__(self):
-        pass
-
-    def get_name(self):
-        pass
-
-    def get_num_commits(self):
-        pass
-
-    def get_num_lines_added(self):
-        pass
-
-    def get_num_lines_deleted(self):
-        pass
-
-
-######
-class PyGithubGetContributorRequest(GetContributorRequest):
+class GithubGetContributorRequest(object):
     def __init__(self, repo_id):
-        super(PyGithubGetContributorRequest, self).__init__()
         self.repo_id = repo_id
 
     def get_repo_id(self):
         return self.repo_id
 
 
-
-class PyGithubGetContributorResponse(GetContributorResponse):
+class GithubGetContributorResponse(object):
     def __init__(self, contributors):
-        super(PyGithubGetContributorResponse, self).__init__()
         self.contributors = contributors
 
     def get_contributors(self):
         return self.contributors
 
 
-class PyGithubContributor(Contributor):
+class GithubContributor(object):
     def __init__(self, named_user, repo):
-        super(PyGithubContributor, self).__init__()
         self.named_user = named_user
         self.repo = repo
 
@@ -90,25 +52,3 @@ class PyGithubContributor(Contributor):
                 pass
 
         return deleted_line
-#
-#
-#
-# class PyGithubContributor2(Contributor):
-#     def __init__(self, a, b, c, d):
-#         super(PyGithubContributor2, self).__init__()
-#         self.a = a
-#         self.b = b
-#         self.c = c
-#         self.d = d
-#
-#     def get_name(self):
-#         return self.a
-#
-#     def get_num_commits(self):
-#         return self.b
-#
-#     def get_num_lines_added(self):
-#         return self.c
-#
-#     def get_num_lines_deleted(self):
-#         return self.d

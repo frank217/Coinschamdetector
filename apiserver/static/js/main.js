@@ -1,8 +1,6 @@
-/* © Devon Rueckner 2016 */
-
 /*
   `app` is initialized in index.html by the server.
-  `app.sprites` and `app.movies` are already populated
+  `app.sprites` and `app.coins` are already populated
 */
 
 // app can trigger events
@@ -10,33 +8,33 @@ riot.observable(app);
 
 
 // application state
-app.selected = null; // id of movie show in lightbox, if applicable
+app.selected = null;
 app.search = "";
-app.critics_min = 85;
-app.audience_min = 85;
-app.available = app.movies;
+app.issues_min = 85;
+app.pr_min = 85;
+app.available = app.coins;
 app.saved = [];
 app.shelved = [];
 
 
 // set the list of available IDs based on current app state
 app.updateAvailableList = function() {
-  app.available = app.movies.filter(function(movie) {
-      if (movie.critics_score < app.critics_min) {
+  app.available = app.coins.filter(function(coin) {
+      if (coin.issues_score < app.issues_min) {
         return false;
-      } else if (movie.audience_score < app.audience_min) {
+      } else if (coin.pr_score < app.pr_min) {
         return false;
-      } else if (app.saved.indexOf(movie.id) != -1) {
+      } else if (app.saved.indexOf(coin.id) != -1) {
         return false;
-      } else if (app.shelved.indexOf(movie.id) != -1) {
+      } else if (app.shelved.indexOf(coin.id) != -1) {
         return false;
-      } else if (app.search && movie.title.toLowerCase().indexOf(app.search) == -1) {
+      } else if (app.search && coin.title.toLowerCase().indexOf(app.search) == -1) {
         return false;
       }
       return true;
     })
-    .map(function(movie) {
-      return movie.id;
+    .map(function(coin) {
+      return coin.id;
     });
 };
 
@@ -68,19 +66,19 @@ app.on('update', function() {
 // app initialization
 $(function() {
   // remove entries that don't have both ratings
-  app.movies = app.movies.filter(function(m) {
-    return m.audience_score >= 0 && m.critics_score >= 0;
+  app.coins = app.coins.filter(function(m) {
+    return m.pr_score >= 0 && m.issues_score >= 0;
   });
   // make a map for efficient look-up
   // also, add an 'average' rating for sorting
-  app.movie_map = {};
-  app.movies.forEach(function(m) {
-    app.movie_map[m.id] = m;
-    m.avg_score = (m.audience_score + m.critics_score) / 2;
+  app.coin_map = {};
+  app.coins.forEach(function(m) {
+    app.coin_map[m.id] = m;
+    m.avg_score = (m.pr_score + m.issues_score) / 2;
   });
 
-  // sort movies by average rating
-  app.movies.sort(function(a, b) {
+  // sort coins by average rating
+  app.coins.sort(function(a, b) {
     if (a.avg_score < b.avg_score) {
       return 1;
     } else if (a.avg_score > b.avg_score) {

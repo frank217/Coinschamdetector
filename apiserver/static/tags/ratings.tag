@@ -1,29 +1,28 @@
-<!-- © Devon Rueckner 2016 -->
 <ratings>
 
   <div>
-    <label for="critics">Issues 점수</label>
+    <label for="issues">Issues 점수</label>
     <div class="range-group">
-      <input type="range" name="issues_score" min="0" max="100" step="1" value="{ app.critics_min }" oninput={ updateCritMin }>
-      <div class="value">{ app.critics_min }</div>
+      <input type="range" name="issues_score" min="0" max="100" step="1" value="{ app.issues_min }" oninput={ updateIssuesMin }>
+      <div class="value">{ app.issues_min }</div>
     </div>
   </div>
   <div>
-    <label for="audience">PR 점수</label>
+    <label for="pr">PR 점수</label>
     <div class="range-group">
-      <input type="range" name="pr_score" min="0" max="100" step="1" value="{ app.audience_min }" oninput={ updateAudMin }>
-      <div class="value">{ app.audience_min }</div>
+      <input type="range" name="pr_score" min="0" max="100" step="1" value="{ app.audience_min }" oninput={ updatePRMin }>
+      <div class="value">{ app.pr_min }</div>
     </div>
   </div>
 
   <script>
 
-  updateCritMin() {
-    app.ctrl.setCritMin(this.critics.value);
+  updateIssuesMin() {
+    app.ctrl.setIssuesMin(this.issues.value);
   }
 
-  updateAudMin() {
-    app.ctrl.setAudMin(this.audience.value);
+  updatePRMin() {
+    app.ctrl.setPRMin(this.pr.value);
   }
 
 

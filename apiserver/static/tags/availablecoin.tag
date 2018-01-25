@@ -1,16 +1,14 @@
-<!-- © Nate Kim 2018 -->
 <availablecoin class="{ hidden: !app.isAvailable(id) }">
 
   <thumbnail class="clickable" onclick="{ select }"></thumbnail>
   <div class="info">
     <div class="clickable" onclick="{ select }">
-      <div class="title">{ title }</div>
-      <div>{ mpaa_rating }, { year }</div>
+      <div class="coin_name">{ coin_name }</div>
     </div>
     <br>
     <div>
-      <div>{ critics_score } - Critics</div>
-      <div>{ audience_score } - Audience</div>
+      <div>{ issues_score } - Issues</div>
+      <div>{ pr_score } - PR</div>
     </div>
 
     <div class="buttons">
@@ -42,7 +40,7 @@
     margin-bottom: 10px;
   }
 
-  .title {
+  .coin_name {
     font-weight: bold;
   }
 

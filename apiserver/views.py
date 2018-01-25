@@ -20,15 +20,15 @@ def main(request):
     with open(os.path.join(APP_DIR, 'templates', 'sprites.json')) as f:
         context['sprites'] = f.read()
 
-    context['movies'] = json.dumps([_overview(m) for m in Coin.objects.all()])
+    context['coins'] = json.dumps([_overview(m) for m in Coin.objects.all()])
 
     return render(request, "index.html", context=context)
 
 
 def _overview(coin):
     return {
-        'id': int(coin.coin_id),
-        'name': coin.coin_name,
+        'coin_id': int(coin.coin_id),
+        'coin_name': coin.coin_name,
         'github_link': coin.github_link,
         'readme_score': coin.readme_score,
         'num_contributors': coin.active_contributors,
@@ -42,12 +42,12 @@ def _details(coin):
     }
 
 
-def api_details(request, rt_id):
+def api_details(request, coin_id):
     try:
-        m = Coin.objects.get(rt_id=rt_id)
+        m = Coin.objects.get(coin_id=coin_id)
     except ObjectDoesNotExist:
         r = JsonResponse({
-            'error': "Movie with id '{}' was not found.".format(rt_id)
+            'error': "Coin with id '{}' was not found.".format(coin_id)
         })
         r.status_code = 404
         return r

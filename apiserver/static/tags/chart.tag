@@ -52,11 +52,11 @@
       .append("g")
       .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
 
-    this.crit_thresh = this.svg.append('line')
+    this.issues_thresh = this.svg.append('line')
       .attr('class', 'threshold')
       .attr("x2", this.x_scale(100));
 
-    this.aud_thresh = this.svg.append('line')
+    this.pr_thresh = this.svg.append('line')
       .attr('class', 'threshold')
       .attr("y2", this.y_scale(100));
 
@@ -117,8 +117,8 @@
         return this.colors.filtered;
       }.bind(this));
 
-    var issues_min_pos = this.y_scale(app.issues_min),
-      pr_min_pos = this.x_scale(app.pr_min);
+    var issues_min_pos = this.y_scale(app.issues_min);
+    var pr_min_pos = this.x_scale(app.pr_min);
 
     this.issues_thresh
       .attr("x1", pr_min_pos)

@@ -1,7 +1,7 @@
 <!-- © Devon Rueckner 2016 -->
 <saved>
 
-  <savedmovie each={ app.movies }></savedmovie>
+  <savedcoin each={ app.coins }></savedcoin>
 
   <script></script>
 

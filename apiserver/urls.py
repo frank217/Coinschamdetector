@@ -20,5 +20,5 @@ from apiserver import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.main),
-    url(r'^api/movies/(?P<rt_id>\w+)/?', views.api_details),
+    url(r'^api/coins/(?P<rt_id>\w+)/?', views.api_details),
 ]

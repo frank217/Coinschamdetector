@@ -9,17 +9,18 @@ html {
 html,
 body {
   box-sizing: border-box;
-  background-color: #FFFFFF;
-  color: #FFFFFF;
+  background-color: #383838;
+  color: #B3B3B3;
   font-family: monospace;
 }
 
 input[type=text] {
-  background-color: #FFFFFF;
+  background-color: #383838;
   border: 1px solid #6F6F6F;
   padding-left: 5px;
   border-radius: 2px;
 }
+
 
 h1 {
   text-align: center;

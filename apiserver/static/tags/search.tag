@@ -1,4 +1,3 @@
-<!-- © Devon Rueckner 2016 -->
 <search>
 
   <input type="text" name="searchBox" placeholder="search…" onkeyup={ keyup }>

@@ -1,7 +1,7 @@
 <!-- © Devon Rueckner 2016 -->
 <shelved>
 
-  <shelvedmovie each={ app.movies }></shelvedmovie>
+  <shelvedcoin each={ app.coins }></shelvedcoin>
 
   <script></script>
 

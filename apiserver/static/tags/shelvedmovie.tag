@@ -1,10 +1,8 @@
-<!-- © Devon Rueckner 2016 -->
 <shelvedmovie class="{ hidden: !app.isShelved(id) }">
 
   <div class="info clickable" onclick="{ select }">
     <div>
-      <div class="title">{ title }</div>
-      <div>{ mpaa_rating }, { year }</div>
+      <div class="coin_name">{ coin_name }</div>
     </div>
   </div>
   <div class="removeBtn clickable" onclick="{ unshelve }">
